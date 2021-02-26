@@ -12,16 +12,13 @@ import NavigationState from 'context/navigation/NavigationState';
 function App() {
   return (
     <BrowserRouter>
+      <NavigationState>
       <Grid container>
         <Grid item xs={12} sm={12} md={12}>
-          <NavigationState>
             <Navigation />
-          </NavigationState>
         </Grid>
         <Grid item xs={12} sm={2} md={2} lg={2}>
-          <NavigationState>
             <Sidebar />
-          </NavigationState>
         </Grid>
         <Grid item xs={12} sm={10} sm={10} lg={10}>
           <Switch>
@@ -32,6 +29,7 @@ function App() {
           </Switch>
         </Grid>
       </Grid>
+      </NavigationState>
     </BrowserRouter>
   );
 }
