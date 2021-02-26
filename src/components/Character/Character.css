@@ -1,0 +1,27 @@
+.Character {
+  margin-top: 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 2px;
+}
+
+.Character__image {
+  max-width: 100%;
+  height: auto;
+}
+
+.Character__image-alive {
+  border: 3px solid lime;
+}
+
+.Character__image-dead {
+  border: 2px solid red;
+}
+
+.Character__image-female {
+  border: 3px solid lime;
+}
+
+.Character__image-regular {
+  border: 3px solid white;
+}

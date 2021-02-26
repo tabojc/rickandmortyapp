@@ -1,0 +1,17 @@
+.sidebar {
+  max-width: 240px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: gray;
+}
+
+.sidebar__menu {
+
+}
+
+.sidebar__menu--active {
+  color: lime;
+}
+
+.sidebar__menu--default {
+  color: white;
+}
