@@ -13,25 +13,26 @@ function App() {
   return (
     <BrowserRouter>
       <NavigationState>
-      <Grid container>
-        <Grid item xs={12} sm={12} md={12}>
+        <Grid container>
+          <Grid item xs={12} sm={12} md={12}>
             <Navigation />
-        </Grid>
-        <Grid item xs={12} sm={2} md={2} lg={2}>
+          </Grid>
+          <Grid item xs={12} sm={2} md={2} lg={2}>
             <Sidebar />
+          </Grid>
+          <Grid item xs={12} sm={10} sm={10} lg={10}>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/protagonistas' component={Staring} />
+              <Route path='/lugares' component={Location} />
+              <Route path='/episodios' component={Episode} />
+            </Switch>
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={10} sm={10} lg={10}>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/protagonistas' component={Staring} />
-            <Route path='/lugares' component={Location} />
-            <Route path='/episodios' component={Episode} />
-          </Switch>
-        </Grid>
-      </Grid>
       </NavigationState>
     </BrowserRouter>
   );
 }
 
 export default App;
+

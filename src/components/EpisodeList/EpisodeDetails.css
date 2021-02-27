@@ -1,0 +1,15 @@
+.EpisodeDetails {
+
+}
+
+.EpisodeDetails__character {
+
+}
+
+.EpisodeDetails__character--alive {
+  color: lime;
+}
+
+.EpisodeDetails__character--dead {
+  color: red;
+}
