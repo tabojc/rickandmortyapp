@@ -22,22 +22,24 @@ const useStyles = makeStyles((theme) => ({
 
 const Navigation = (props) => {
   const [open, setOpen] = useState(false);
-  const { selectedNavbar } = useContext(NavigationContext);
-  const classes = useStyles();
+  const { selectedNavbar, sidebarShown, toggleSidebar } = useContext(NavigationContext);
 
-  const toggleSidebar = async _ => {
-    setOpen(!open);
-  }
+  const classes = useStyles();
 
   const showNavbar = (navbar) => {
     return navbar !== '' ? `- ${navbar}`: '';
   }
 
+  const toggleNavSidebar = (e) => {
+    e.preventDefault();
+    toggleSidebar(!!!sidebarShown);
+  }
+  console.log('sidebar1: ', sidebarShown);
   return (
     <div>
       <AppBar position="static" color="transparent" style={{ border: '1px solid blue' }}>
         <Toolbar variant="dense">
-          <IconButton onClick={toggleSidebar}>
+          <IconButton onClick={toggleNavSidebar}>
             <MenuIcon />
           </IconButton>
           {`Rick and Morty App ${showNavbar(selectedNavbar)}`}

@@ -10,13 +10,34 @@ const NavigationState = (props) => {
 
   const [state, dispatch] = useReducer(NavigationReducer, initialState);
 
-  function toggleSidebar() {
-
+  function toggleSidebar(show) {
+    console.log(`toggleSidebar(${show})`);
+    if (show) {
+      dispatch({ type: 'SIDEBAR_SHOW' });
+    } else {
+      dispatch({ type: 'SIDEBAR_HIDE' });
+    }
   }
+
+  function getSelectedNavbar() {
+    dispatch({
+      type: 'GET_NAVBAR',
+    });
+  }
+
+  function setSelectedNavbar(payload) {
+    dispatch({
+      type: 'SET_NAVBAR',
+      payload: payload
+    });
+  }
+
   return (
     <NavigationContext.Provider value={{
       selectedNavbar: state.selectedNavbar,
       sidebarShown: state.sidebarShown,
+      toggleSidebar,
+      setSelectedNavbar
     }}>
       {props.children}
     </NavigationContext.Provider>
